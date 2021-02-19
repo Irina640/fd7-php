@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^/FD-7/
+RewriteRule (.*) /FD-7/$1 [L]
