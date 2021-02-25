@@ -238,29 +238,46 @@
     output($entries);
     echo "<br>";
 
-   // 10    
-   for ($r = 0; $r < 3; $r++) {
-        for ($c = 0; $c < 3; $c++) {
+   // 9b 
+   $entries = [
+    ['0','0','0'],
+    ['0','0','0'],
+    ['0','0','0'],
+   ];   
+
+   $i = 1;
+   for ($r = 2; $r <= 0; $r--) {
+        for ($c = 2; $c =< 0; $c-=2) {
             if ($r == 0 && $c == 0){
-                $entries[$r][$c] = '8';
-            } elseif ($r == 0 && $c ==2){
-                $entries[$r][$c] = '5';
-            } elseif ($r == 1 && $c == 0){
-                $entries[$r][$c] = '3';
-            } elseif ($r == 1 && $c == 2){
-                $entries[$r][$c] = '2';
-            } elseif ($r == 2 && $c == 0){
-                $entries[$r][$c] = '1';
-            } elseif ($r == 2 && $c == 2){
-                $entries[$r][$c] = '1';
-            } else {
-                $entries[$r][$c]= '0';
+                $entries[$r][$c] = $i++;
+          
             }
         }
     }
     output($entries);
     echo "<br>";
 
+    // 10 
+   $entries = [
+    ['0','0','0'],
+    ['0','0','0'],
+    ['0','0','0'],
+   ];   
+
+   $i1 = 1;
+   $i2 = 0;
+   for ($r = 2; $r >= 0; $r--) {
+        for ($c = 2; $c >= 0; $c-=2) {
+            $a = $i2;
+            $i2 = $i1 + $i2;
+            $i1 = $a;
+            $entries[$r][$c] = $i2;
+          
+            
+        }
+    }
+    output($entries);
+    echo "<br>";
 
 ?>
 
